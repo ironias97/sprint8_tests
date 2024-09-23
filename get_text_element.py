@@ -2,9 +2,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+import data
 
 driver = webdriver.Chrome()
-driver.get("https://around-v1.nm.tripleten-services.com/signin?lng=es")
+driver.get(data.around_link)
 
 # Buscar el campo Correo electrónico y rellenarlo
 driver.find_element(By.ID, "email").send_keys("some_email")

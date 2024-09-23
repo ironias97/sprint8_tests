@@ -1,8 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+import data
 
 driver = webdriver.Chrome()
-driver.get("https://around-v1.nm.tripleten-services.com/signin?lng=es")
+driver.get(data.around_link)
 imgs =driver.find_elements(By.XPATH,'.//img')
 assert len(imgs) >1
 
