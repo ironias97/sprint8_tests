@@ -26,5 +26,7 @@ driver.find_element(By.XPATH, ".//form[@name='edit-avatar']/button[text()='Guard
 
 # Esperando a que se cargue la foto de perfil
 WebDriverWait(driver, 3).until(expected_conditions.text_to_be_present_in_element_attribute((By.CSS_SELECTOR, ".profile__image"), 'style', avatar_url))
+
+style = driver.find_element(By.CSS_SELECTOR, ".profile__image").get_attribute('style')
 assert avatar_url in style
 driver.quit()
